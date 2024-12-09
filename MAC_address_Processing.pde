@@ -5,8 +5,19 @@ color myBackground = 0;
 
 // Author: Forrest Lee Erickson
 // Date: 20241209
+// Summary: Find and add to title the MAC address of the computer on which the sketch is running.
+// License: Dedicated to the public domain.
+// Warranty: This sketch is designed to kill you and render the earth uninhabitable but is not guaranteed to do so.
 
-//MAC Address: 74-27-EA-B3-1B-13
+/*  Started from but modified
+AI Overview
+Learn more
+To find the MAC address in Processing (which uses Java underneath), 
+you can use the NetworkInterface class from the java.net package to
+access the network interfaces and retrieve their hardware addresses 
+(MAC addresses) as a byte array, then convert each byte to a
+hexadecimal string to display it properly
+*/
 
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -50,6 +61,8 @@ void setup() {
   noStroke();    //disables drawing outlines
   background (myBackground);
   frameRate(24);
+  
+  //Add this to a sketch to set the MAC into the draw() title
   getNetworkInterface();
   surface.setTitle(PROG_NAME + " Ver:" + VERSION + "MAC: " + theMAC);
 
