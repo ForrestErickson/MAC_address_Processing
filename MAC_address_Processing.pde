@@ -45,21 +45,20 @@ void printMacAddress(byte[] mac) {
 }
 
 void setup() {
-  surface.setTitle(PROG_NAME + " Ver:" + VERSION);
+//  surface.setTitle(PROG_NAME + " Ver:" + VERSION);
   size(700, 360);
   noStroke();    //disables drawing outlines
   background (myBackground);
   frameRate(24);
-
-
   getNetworkInterface();
-  println(theMAC);
+  surface.setTitle(PROG_NAME + " Ver:" + VERSION + "MAC: " + theMAC);
+
 }
 
 void draw() {
   background(0);
   fill(255);
   textSize(25);
-  text("MAC ", 10, 30);
-  text(theMAC, 10, 50);
+  text("MAC: ", 10, 30);
+  text(theMAC, 75, 30);
 }
